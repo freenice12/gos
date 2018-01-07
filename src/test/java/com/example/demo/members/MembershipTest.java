@@ -18,8 +18,8 @@ public class MembershipTest {
         ms.setEmail("first@email.com");
         ms.setUsername("first user name");
         LocalDateTime joinedDate = LocalDateTime.now();
-        ms.setJoined(joinedDate);
-        ms.setUpdated(joinedDate.plusDays(1L));
+        ms.setCreatedDate(joinedDate);
+        ms.setLastModifiedDate(joinedDate.plusDays(1L));
         ms.setAdmin(false);
 
         // Then
@@ -27,8 +27,8 @@ public class MembershipTest {
         assertTrue(ms.getPassword() == null);
         assertTrue(ms.getEmail().equals("first@email.com"));
         assertTrue(ms.getUsername().equals("first user name"));
-        assertTrue(ms.getJoined().equals(joinedDate));
-        assertTrue(ms.getUpdated().equals(joinedDate.plusDays(1L)));
+        assertTrue(ms.getCreatedDate().equals(joinedDate));
+        assertTrue(ms.getLastModifiedDate().equals(joinedDate.plusDays(1L)));
         assertFalse(ms.isAdmin());
     }
 

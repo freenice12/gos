@@ -1,10 +1,13 @@
 package com.example.demo.members;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import com.example.demo.members.abs.AbstractTimeEntity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-public class Membership {
+public class Membership extends AbstractTimeEntity {
 
     @Id @GeneratedValue
     private Long id;
@@ -17,11 +20,11 @@ public class Membership {
 
     private String address;
 
-//    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime joined = LocalDateTime.now();
-
-//    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime updated = LocalDateTime.now();
+////    @Temporal(TemporalType.TIMESTAMP)
+//    private LocalDateTime joined = LocalDateTime.now();
+//
+////    @Temporal(TemporalType.TIMESTAMP)
+//    private LocalDateTime updated = LocalDateTime.now();
 
     private boolean admin;
 
@@ -57,25 +60,25 @@ public class Membership {
         return address;
     }
 
-    public void setAddress(String address) {
+    private void setAddress(String address) {
         this.address = address;
     }
 
-    public LocalDateTime getJoined() {
-        return joined;
-    }
-
-    public void setJoined(LocalDateTime joined) {
-        this.joined = joined;
-    }
-
-    public LocalDateTime getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(LocalDateTime updated) {
-        this.updated = updated;
-    }
+//    public LocalDateTime getJoined() {
+//        return joined;
+//    }
+//
+//    public void setJoined(LocalDateTime joined) {
+//        this.joined = joined;
+//    }
+//
+//    public LocalDateTime getUpdated() {
+//        return updated;
+//    }
+//
+//    public void setUpdated(LocalDateTime updated) {
+//        this.updated = updated;
+//    }
 
     public boolean isAdmin() {
         return admin;
@@ -111,8 +114,8 @@ public class Membership {
                 ", password='" + password + '\'' +
                 ", username='" + username + '\'' +
                 ", address='" + address + '\'' +
-                ", joined=" + joined +
-                ", updated=" + updated +
+//                ", joined=" + joined +
+//                ", updated=" + updated +
                 ", admin=" + admin +
                 '}';
     }
