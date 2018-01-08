@@ -1,8 +1,16 @@
 package com.example.demo.members;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.Size;
+
 public class MembershipDTO {
     public static class Create {
+        @NotBlank
+        @Size(min = 5)
         private String email;
+        @NotBlank
+        @Size(min = 4, max = 30)
         private String password;
         private String address;
         private boolean admin;
