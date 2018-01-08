@@ -1,6 +1,17 @@
+spring:
+  profiles:
+    active: local
+
 security:
   basic:
     enabled: true
-  user:
-    name: id
-    password: pwd
+---
+spring:
+  profiles: test
+
+security:
+  basic:
+    enabled: false
+#  user:
+#    name: id
+#    password: pwd
